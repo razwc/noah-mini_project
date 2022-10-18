@@ -1,0 +1,90 @@
+/* Title */
+h1 {
+    text-align: center;
+}
+
+/* Forms */
+
+#forms {
+    margin: 0 auto;
+    background-color: lightgrey;
+    opacity: 0.7;
+    width: 700px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+#data_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    margin-top: 10px;
+    width: 450px;
+    height: 35px;
+    font-size: 13pt;
+}
+
+#location_div, #address_div, #comments_div {
+    display: flex;
+}
+
+#location_label_div, #address_label_div, #comments_label_div {
+    width: 130px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+/* Buttons */
+#buttons {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#save {
+    width: 100px;
+    height: 30px;
+    color: white;
+    background-color: cornflowerblue;
+    font-size: 13pt;
+    border-radius: 15px;
+}
+
+#edit, #delete {
+    width: 50px;
+    height: 20px;
+    color: white;
+    background-color: grey;
+    font-size: 8pt;
+    border-radius: 15px;
+}
+
+/* Table */
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10px;
+    padding: 7px;
+}
+
+table {
+    width: 700px;
+    text-align: center;
+}
+
+#number {
+    width: 20px;
+}
+
+#name {
+    width: 300px;
+}
+
+#address {
+    width: 380px;
+}
