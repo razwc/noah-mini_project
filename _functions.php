@@ -34,7 +34,7 @@ function retrieveExistingDataString() {
 
 function retrieveDataString() {
     $all_data = createDataArray();
-    $new_data = ["location" => $_POST["location"], "address" => $_POST["address"]];
+    $new_data = ["location" => $_POST["location"], "address" => $_POST["address"], "id" => uniqid()];
     
     array_push($all_data, $new_data);
     
@@ -51,30 +51,39 @@ function saveDataToFile() {
     fclose($data_file);
 };
 
-function delete_place($place_name){
+function delete_place($id){
     global $DATA_FILE_PATH;
 
+    // get array of data
     $places = json_decode(retrieveExistingDataString(), true);
+    print_r($places);
+    echo '<br><br>';
+    print_r(json_encode($places));
 
     // Change 1
-    $places = array_filter($places, function($place) use($place_name){
-        return $place["location"] != $place_name;
-    });
-    $places = array_values($places);
-
+    // $places = array_filter($places, function($place) use($place_name){
+    //     return $place["location"] != $place_name;
+    // });
+    // $places = array_values($places);
+    
     // Change 2
-    // $new_places = [];
-    // foreach($places as $place){
-    //     if($place["name"] != $place_name){
-    //         array_push($new_places, $place);
-    //     }
-    // };
+    $new_places = [];
+    foreach($places as $place){
+        if($place["id"] != $id){
+            array_push($new_places, $place);
+        }
+    };
+    
+    echo '<br><br>';
+    print_r($new_places);
+    echo '<br><br>';
+    print_r(json_encode($new_places));
 
     //write
-    $places = json_encode($places, JSON_PRETTY_PRINT);
+    $new_places = json_encode($new_places, JSON_PRETTY_PRINT);
     // saveDataToFile($DATA_FILE_PATH, $places);
     $data_file = fopen($DATA_FILE_PATH, "w");
-    fwrite($data_file, $places);
+    fwrite($data_file, $new_places);
     fclose($data_file);
 };
 

@@ -3,6 +3,12 @@
 include "_constants.php";
 include "_functions.php";
 
+if(isset($_POST['submit'])){
+    if($_POST['submit'] == 'delete'){
+        delete_place($_POST['id']);
+    }
+};
+
 if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
     // Create data file
     createFile();
@@ -89,8 +95,11 @@ if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
                 <td><?= $all_data_arr[$i]["location"] ?></td>
                 <td><?= $all_data_arr[$i]["address"] ?></td>
                 <td>
-                    <button id="edit" type="button" name="edit">Edit</button>
-                    <button id="delete" type="button" name="delete">Delete</button>
+                    <form method="POST">
+                        <input type="text" name="id" value=<?= $all_data_arr[$i]['id']?>>
+                        <button id="edit" type="button" name="submit" value="edit">Edit</button>
+                        <button id="delete" type="submit" name="submit" value="delete">Delete</button>
+                    </form>
                 </td>
                 </tr>
             <?php } ?>
