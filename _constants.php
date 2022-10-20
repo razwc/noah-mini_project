@@ -1,3 +1,3 @@
 <?php
-$DATA_FILE_PATH = "/Applications/XAMPP/xamppfiles/htdocs/exercise/visits/data.json";
+$DATA_FILE_PATH = __DIR__ . "/data.json";
 ?>
