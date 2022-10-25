@@ -54,7 +54,7 @@ if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
                         <label for="location">Name of location: </label>
                     </div>
                     <div>
-                        <input required type="text" name="location">
+                        <input required type="text" name="location" autofocus>
                     </div>
                 </div>
                 <div id="address_div">
@@ -80,30 +80,10 @@ if(!(isset($_POST["location"]) && isset($_POST["address"]))) {
         </form>
         <div id="numberOfLocations">Number of locations saved : <?= $counts ?></div>
     </div>
-    <div>
-    </div>
-    <div id="table_div">
-        <table>
-            <tr>
-                <th id="number">#</th>
-                <th id="name">Name</th>
-                <th id="address">Address</th>
-            </tr>
-            <?php for($i = 0; $i < count($all_data_arr); $i++){ ?>
-                <tr>
-                <td><?= $i + 1 ?></td>
-                <td><?= $all_data_arr[$i]["location"] ?></td>
-                <td><?= $all_data_arr[$i]["address"] ?></td>
-                <td>
-                    <form method="POST">
-                        <input type="text" name="id" value=<?= $all_data_arr[$i]['id']?>>
-                        <button id="edit" type="button" name="submit" value="edit">Edit</button>
-                        <button id="delete" type="submit" name="submit" value="delete">Delete</button>
-                    </form>
-                </td>
-                </tr>
-            <?php } ?>
-        </table>
+    <div id="menu">
+        <ul>
+            <li><a href="./list_page.php">List of saved locations ></a></li>
+        </ul>
     </div>
     <!-- <script type="text/javascript" src="./app.js"></script> -->
 </body>
