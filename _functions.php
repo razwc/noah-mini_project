@@ -32,6 +32,7 @@ function retrieveExistingDataString() {
     return json_encode($all_data);
 };
 
+// hi noah
 function retrieveDataString() {
     $all_data = createDataArray();
     $new_data = ["location" => $_POST["location"], "address" => $_POST["address"], "id" => uniqid()];
