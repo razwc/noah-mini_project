@@ -3,6 +3,25 @@ h1 {
     text-align: center;
 }
 
+/* Menu bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    font-size: 13pt;
+}
+
+#menu {
+    /* margin: auto; */
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+
 /* Forms */
 
 #forms {
