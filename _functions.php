@@ -52,6 +52,7 @@ function saveDataToFile() {
     fclose($data_file);
 };
 
+// hi again 
 function delete_place($id){
     global $DATA_FILE_PATH;
 
